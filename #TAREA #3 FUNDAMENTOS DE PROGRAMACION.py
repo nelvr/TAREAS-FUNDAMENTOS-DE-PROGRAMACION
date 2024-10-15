@@ -57,16 +57,17 @@ match frecuencia_de_pago:
 plan = int(input(informacion_de_precios))
 if plan == 1:
     print("Usted ha seleccionado el plan basico!")
-    tarifa = plan_basico + (plan_basico * medio_de_pago) + (plan_basico * impuesto_iva) - (frecuencia_de_pago * plan_basico)
+    suscripcion = plan_basico
     print("Usted tiene acceso a la zona de cardio!")
 elif plan == 2:
-    tarifa = plan_basico + (plan_basico * medio_de_pago) + (plan_basico * impuesto_iva) - (frecuencia_de_pago * plan_basico)
+    suscripcion = plan_intermedio
     print("Usted tiene acceso a las clases grupales!")
 elif plan == 3:
-    tarifa = plan_basico + (plan_basico * medio_de_pago) + (plan_basico * impuesto_iva) - (frecuencia_de_pago * plan_basico)
+    suscripcion = plan_premium
     print("Usted tiene acceso habilitado tanto al cardio como a las clases grupales!")
 else:
     print("ENTRADA INVALIDA")
+tarifa = suscripcion + (suscripcion * medio_de_pago) + (suscripcion * impuesto_iva) - (frecuencia_de_pago * suscripcion)
 descuento_promocion = input("Si sabe cual es el codigo promocional, insertelo ahora. En caso de no ternerlo, puede insertar cualquier valor o palabra: ")
 if descuento_promocion == "DESC25":
     descuento = (tarifa * 0.25)
