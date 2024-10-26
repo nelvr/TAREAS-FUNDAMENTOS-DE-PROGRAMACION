@@ -8,22 +8,19 @@ a = int(input("Introduzca el primer numero: "))
 b = int(input("Introduzca el segundo numero: "))
 d = int(input("Presione 1 si quiere ordenar la lista de numeros pares en orden ascendente, y 2 si lo desea en orden descendente: "))
 # PROCESAMIENTO DE DATOS
-if d == 1:
-    while a != b:
-        c = a % 2
-    if c == 0:
-        print(a, "es par")
-    a = a + 1
-    if a == b:
-        if b % 2 == 0:
-            print(b, "es par")
-elif d == 2:
-    while b != a:
-        c = b % 2
-    if c == 0:
-        print(b, "es par")
-    b = b - 1
-    if b == a:
-        if a % 2 == 0:
-            print(a, "es par")
+if a > b:
+    a, b = b, a
 
+# BUCLE PARA LA RECOLECCION DE NUMEROS
+for num in range(a, b + 1):
+    if num % 2 == 0:
+        pares.append(num)
+
+# ORDEN SEGUN LA ELECCION DEL USUARIO
+if d == 1:
+    pares.sort()
+elif d == 2:
+    pares.sort(reverse=True)
+
+# SALIDA
+print("Números pares ordenados:", pares)
